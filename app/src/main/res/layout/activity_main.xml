@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/MenuWindow"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +79,8 @@
             android:width="300dp"
             android:textSize="30dp"
             android:visibility="visible"
-            android:enabled="true" />
+            android:enabled="true"
+            android:onClick="selectEventButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -145,7 +146,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/EventSelectionScreen">
+        android:id="@+id/EventSelectionScreen"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
