@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/MenuWindow"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -168,21 +168,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create New Event"
-            android:id="@+id/newEventButton"
+            android:id="@+id/createNewEventButton"
             android:layout_gravity="center_horizontal"
             android:width="300dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="createNewEventButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Select Event"
-            android:id="@+id/button2"
+            android:id="@+id/eventSelectorButton"
             android:layout_gravity="center_horizontal"
             android:width="300dp"
             android:textStyle="bold"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:onClick="eventSelectorButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -193,7 +195,7 @@
             android:textSize="30dp"
             android:textStyle="bold"
             android:width="300dp"
-            android:onClick="eventBackButtonClicked" />
+            android:onClick="backToMenu" />
     </LinearLayout>
 
     <LinearLayout
@@ -232,7 +234,7 @@
             android:textStyle="bold"
             android:textSize="30dp"
             android:width="300dp"
-            android:onClick="syncButtonClicked" />
+            android:onClick="backToMenu" />
     </LinearLayout>
 
     <LinearLayout
@@ -269,7 +271,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/StartScreen"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <Button
             android:layout_width="wrap_content"
