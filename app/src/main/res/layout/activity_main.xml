@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/MenuWindow"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,7 +91,8 @@
             android:enabled="true"
             android:textStyle="bold"
             android:width="300dp"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:onClick="clockSyncButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -103,7 +104,8 @@
             android:width="300dp"
             android:textSize="30dp"
             android:visibility="visible"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="registrationButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -115,7 +117,8 @@
             android:width="300dp"
             android:textSize="30dp"
             android:visibility="visible"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="startButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -127,7 +130,8 @@
             android:width="300dp"
             android:textSize="30dp"
             android:visibility="visible"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="finishButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
@@ -139,7 +143,8 @@
             android:textStyle="bold"
             android:width="300dp"
             android:visibility="visible"
-            android:enabled="false" />
+            android:enabled="false"
+            android:onClick="resultsButtonClicked" />
     </LinearLayout>
 
     <LinearLayout
@@ -183,10 +188,115 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ok"
-            android:id="@+id/backButton"
+            android:id="@+id/eventBackButton"
             android:layout_gravity="center_horizontal"
             android:textSize="30dp"
             android:textStyle="bold"
-            android:width="300dp" />
+            android:width="300dp"
+            android:onClick="eventBackButtonClicked" />
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ClockSyncScreen"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <TextClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textClock"
+            android:layout_gravity="center_horizontal"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:format12Hour="hh:mm:ss" />
+
+        <DigitalClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/digitalClock"
+            android:layout_gravity="center_horizontal"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SYNC"
+            android:id="@+id/syncButton"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:width="300dp"
+            android:onClick="syncButtonClicked" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/RegistrationScreen"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD DRIVER"
+            android:id="@+id/addDriverButton"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:width="300dp"
+            android:textSize="30dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONE"
+            android:id="@+id/doneWithRegistrationButton"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:width="300dp"
+            android:onClick="doneWithRegistrationButtonClicked" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/StartScreen"
+        android:visibility="visible">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MENU"
+            android:id="@+id/menuButton"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:width="300dp"
+            android:onClick="backToMenu" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/FinishScreen"
+        android:visibility="gone"></LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ResultsScreen"
+        android:visibility="gone">
+
+    </LinearLayout>
+
 </RelativeLayout>
