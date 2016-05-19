@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/MenuWindow"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,7 +152,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/EventSelectionScreen"
-        android:visibility="gone">
+        android:visibility="visible"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
@@ -186,6 +187,13 @@
             android:textSize="20dp"
             android:onClick="eventSelectorButtonClicked" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newEventName"
+            android:visibility="visible"
+            android:layout_weight="0.14" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -195,7 +203,8 @@
             android:textSize="30dp"
             android:textStyle="bold"
             android:width="300dp"
-            android:onClick="backToMenu" />
+            android:onClick="newEventSelectedButton" />
+
     </LinearLayout>
 
     <LinearLayout
