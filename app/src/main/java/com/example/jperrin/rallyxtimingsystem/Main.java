@@ -7,8 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import java.util.ArrayList;
+
+
+
+
 
 public class Main extends AppCompatActivity {
+
+
+    private static final ArrayList EVENT_REGISTRATION = new ArrayList();
+    private static final ArrayList STAGING_DATA = new ArrayList();
+    private static String EVENT_NAME = "";
+    public static final Integer NAME = 0;
+    public static final Integer MEMBERNUM = 1;
+    public static final Integer CARNUM = 2;
+    public static final Integer CARCLASS = 3;
+    public static final Integer CARMAKE = 4;
+    public static final Integer EMAIL = 5;
 
 
     LinearLayout menuWindow,
@@ -143,6 +159,36 @@ public class Main extends AppCompatActivity {
         clockSyncScreen.setVisibility(View.VISIBLE);
     }
 
+
+    ////////// Initialization of database //////////
+    public void newEvent(String name){
+        EVENT_REGISTRATION.clear();
+        STAGING_DATA.clear();
+        EVENT_NAME = name;
+    }
+
+    ////////// Driver Methods //////////
+    public void addDriver(String name,
+                          Integer memberNumber,
+                          Integer carNumber,
+                          String carClass,
+                          String carMake,
+                          String email){
+
+
+        ArrayList driver = new ArrayList();
+        driver.add(NAME, name);
+        driver.add(MEMBERNUM, memberNumber);
+        driver.add(CARNUM, carNumber);
+        driver.add(CARCLASS, carClass);
+        driver.add(CARMAKE, carMake);
+        driver.add(EMAIL, email);
+
+        EVENT_REGISTRATION.add(carNumber, driver);
+
+    }
+
+    
 
 }//EOL
 
